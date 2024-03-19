@@ -4,7 +4,7 @@
 
 Este projeto, chamado Playstation_Remake, tem como objetivo recriar o sistema operacional do Playstation 1. Ele é projetado para rodar em conjunto com um emulador de PS1 a ser definido, com a intenção de ser instalado em um sistema operacional Linux sem interface gráfica e executado em um projeto de Playstation Raspberry Pi.
 
-O projeto está sendo desenvolvido na Unity versão 2023.3.16f1. A compilação tem como alvo o Linux na arquitetura x64.
+O projeto está sendo desenvolvido na Unity versão 2023.3.21f1. A compilação tem como alvo o Linux na arquitetura x64.
 
 ## Pré-requisitos
 
@@ -15,7 +15,7 @@ O projeto está sendo desenvolvido na Unity versão 2023.3.16f1. A compilação 
 ## Configuração do projeto
 
 1. Clone o repositório
-2. Abra o projeto no Unity 2023.3.16f1
+2. Abra o projeto no Unity 2023.3.21f1
 3. Execute o projeto
 
 ## Funções principais
