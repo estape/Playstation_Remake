@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class GameLoader : MonoBehaviour
 {
-    public string GameID;
-    public string GamePath;
-
-    public (string CDGameID, bool CDInDriver) GetCDGameID()
+    //Check if CD is in the drive.
+    public static (string CDGameID, bool CDInDriver) GetCDGameID()
     {
         string systemCNF;
         bool CDDriver;

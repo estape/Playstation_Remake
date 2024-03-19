@@ -6,47 +6,12 @@ using System.Collections;
 
 public class Boot : MonoBehaviour
 {
+    [Header("Media")]
     [SerializeField] private VideoPlayer videoBootClass;
     [SerializeField] private VideoClip whiteBoot;
     [SerializeField] private VideoClip blackBoot;
     [SerializeField] private VideoClip fullBoot;
     [SerializeField] private GameObject VideoScreen;
-
-    //Check if CD is in the drive.
-    private (string CDGameID, bool CDInDriver) GetCDGameID()
-    {
-        string systemCNF;
-        bool CDDriver;
-
-        try 
-        {
-            //Search for game SYSTEM.CNF and read to find Playstation game ID.
-            systemCNF = File.ReadAllText("E:\\SYSTEM.CNF");
-
-            CDDriver = true;
-
-            systemCNF = systemCNF.Replace("BOOT = cdrom:\\", "");
-            systemCNF = systemCNF.Replace("EVENT = 20", "");
-            systemCNF = systemCNF.Replace("TCB = 5", "");
-            systemCNF = systemCNF.Replace("STACK = 801FFFF0", "");
-            systemCNF = systemCNF.Trim();
-
-            systemCNF = systemCNF.Substring(0, systemCNF.Length - 2);
-
-            //Replace underline to hyphen and remove dot for better comunication with database images.
-            systemCNF = systemCNF.Replace("_", "-");
-            systemCNF = systemCNF.Replace(".", "");
-        }
-
-        catch
-        {
-            //Set empty and false if there's no Playstation CD in the drive.
-            systemCNF = "";
-            CDDriver = false;
-        }
-
-        return (systemCNF, CDDriver);
-    }
 
     //Set a timer to wait boot video complete playing and call LoadGame function from GameLoader class.
     IEnumerator DelayAndLoadGame(float waitTime, bool CDIsTrue)
@@ -82,7 +47,7 @@ public class Boot : MonoBehaviour
     // Start is called before the first frame update.
     void Start()
     {
-        (string cdGameID, bool CDFound) = GetCDGameID();
+        (string cdGameID, bool CDFound) = GameLoader.GetCDGameID();
 
         //Start CD game or load main menu.
         if (CDFound)
