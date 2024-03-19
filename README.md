@@ -15,7 +15,7 @@ O projeto está sendo desenvolvido na Unity versão 2023.3.21f1. A compilação 
 ## Configuração do projeto
 
 1. Clone o repositório
-2. Abra o projeto no Unity 2023.3.16f1
+2. Abra o projeto no Unity 2023.3.21f1
 3. Execute o projeto
 
 ## Funções principais
