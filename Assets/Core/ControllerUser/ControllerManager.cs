@@ -15,9 +15,9 @@ public class ControllerManager : MonoBehaviour
             DS4.SetLightBarColor(Color.cyan);
             Debug.Log("Dualshock 4 has found it!");
         }
-        else if(DS3 != null)
+        else
         {
-            Debug.Log("Dualshock 3 has found it!");
+            Debug.Log("No Dualshock 4 detected.");
         }
 
     }

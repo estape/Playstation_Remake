@@ -18,6 +18,7 @@ public class Boot : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         VideoScreen.SetActive(false);
+        //Move to GameManager
         ControllerManager controllerManagerClass = new ControllerManager();
         controllerManagerClass.CheckIfPSController();
 
