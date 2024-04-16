@@ -7,8 +7,7 @@ public class ControllerManager : MonoBehaviour
 {
     public void CheckIfPSController()
     {
-        var DS4 = DualShock4GamepadHID.current;
-        var DS3 = DualShock3GamepadHID.current;
+        var DS4 = DualShockGamepad.current;
         
         if(DS4 != null)
         {
