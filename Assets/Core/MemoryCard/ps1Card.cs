@@ -4,12 +4,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Drawing;
 using System.IO;
 using System.Security.Cryptography;
-using UnityEngine.UI;
 using UnityEngine;
-using Color = System.Drawing.Color;
 
 namespace MemcardRex
 {
@@ -837,7 +834,7 @@ namespace MemcardRex
             int blackFlag = 0;
 
             //Clear existing data
-            iconPalette = new Color[15, 16];
+            iconPalette = new System.Drawing.Color[15, 16];
 
             //Cycle through each slot on the Memory Card
             for (int slotNumber = 0; slotNumber < 15; slotNumber++)
@@ -854,7 +851,7 @@ namespace MemcardRex
                     blackFlag = (saveData[slotNumber, byteCount + 97] & 0x80);
 
                     //Get the color value
-                    if ((redChannel | greenChannel | blueChannel | blackFlag) == 0) iconPalette[slotNumber, colorCounter] = Color.Transparent;
+                    if ((redChannel | greenChannel | blueChannel | blackFlag) == 0) iconPalette[slotNumber, colorCounter] = System.Drawing.Color.Transparent;
                     else iconPalette[slotNumber, colorCounter] = System.Drawing.Color.FromArgb(redChannel, greenChannel, blueChannel);
                     colorCounter++;
                 }
@@ -883,8 +880,8 @@ namespace MemcardRex
                         for (int x = 0; x < 16; x += 2)
                         {
                             //Efetua a lógica usando System.Drawing.Color
-                            Color color1 = iconPalette[slotNumber, saveData[slotNumber, byteCount] & 0xF];
-                            Color color2 = iconPalette[slotNumber, saveData[slotNumber, byteCount] >> 4];
+                            System.Drawing.Color color1 = iconPalette[slotNumber, saveData[slotNumber, byteCount] & 0xF];
+                            System.Drawing.Color color2 = iconPalette[slotNumber, saveData[slotNumber, byteCount] >> 4];
 
                             UnityEngine.Color unityColor1 = ConvertDrawingColorToUnityColor(color1);
                             UnityEngine.Color unityColor2 = ConvertDrawingColorToUnityColor(color2);
