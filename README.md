@@ -1,7 +1,5 @@
 # Playstation_Remake
 
-Assets e documentos: https://1drv.ms/f/s!AqozztUtYLnP44xYmUXLbuOwDKMl-g
-
 ## Sobre o Projeto
 
 Este projeto, chamado Playstation_Remake, tem como objetivo recriar o sistema operacional do Playstation 1. Ele é projetado para rodar em conjunto com um emulador de PS1 a ser definido, com a intenção de ser instalado em um sistema operacional Linux sem interface gráfica e executado em um projeto de Playstation Raspberry Pi.
